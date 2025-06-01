@@ -1,0 +1,36 @@
+body{
+    background-color: transparent;
+}
+header{
+    margin: auto;
+    width: 1500px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    font-family: 'Montserrat';
+    z-index: 1;
+    color: white;
+    background: transparent;
+    border-bottom: 1px solid #ffffff60;
+}
+header img{
+    color: white;
+} 
+.BtnZ{
+    margin: 0 10px;
+    border: transparent 1px solid;
+    background-color: #2b3c66;
+    padding: 9px 20px 10px;
+    border-radius: 20px;
+    color: #ffffff;
+}
+.HeaderDiv{
+    display: flex;
+}
+.menu_items{
+    display: flex;
+}
+.menu_items p{
+    margin: 20px;
+}
