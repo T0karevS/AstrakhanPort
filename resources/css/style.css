@@ -166,6 +166,54 @@ video{
     background-color: #f8f8f8;
 }
 .upper_footer{
+    display: flex;
+    align-items: center;
     background-color: #2d2d2d;
     color: white;
+    height: 100px;
+    justify-content: space-evenly;
+}
+.sbscb{
+    display: flex;
+}
+.sbmt{
+    appearance: button;
+    cursor: pointer;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+.submit_input_main{
+    display: flex;
+    background-color: #333333;
+    height: 48px;
+    border-radius: 5px;
+    border: 1px solid #CACACA;
+    color: #cacaca;
+}
+.input_email{
+    padding: 0px 10px;
+}
+.submit_input_main div{
+    display: flex;
+    align-items: center;
+}
+.submit_input_main:hover, .input_email:hover{
+    background-color: #f8f8f8;
+    color: black;
+    border-radius: 5px;
+}
+.btnSubmit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.icon_submit{
+    position: relative;
+}
+footer{
+    background-color: #555555;
 }
