@@ -1,8 +1,5 @@
 <template>
     <div class="mainpage-block">
-        <!-- <video loop autoplay muted src="video/mainpagevideo.mp4">
-            
-        </video> -->
          <swiper
             :modules="[Autoplay, Navigation, Pagination]"
             :autoplay="{ delay: 50000, disableOnInteraction: false }"
@@ -64,4 +61,5 @@ const slides = [
   { type: 'video', src: '/video/mainpagevideo.mp4' },
   { type: 'image', src: '/images/mainpage.jpg' },
 ];
+
 </script>
