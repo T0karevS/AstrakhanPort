@@ -4,7 +4,7 @@ body{
 header{
     margin: auto;
     width: 1500px;
-    height: 130px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content:space-around;
@@ -17,14 +17,6 @@ header{
 header img{
     color: white;
 } 
-.BtnZ{
-    margin: 0 10px;
-    border: transparent 1px solid;
-    background-color: #2b3c66;
-    padding: 9px 20px 10px;
-    border-radius: 20px;
-    color: #ffffff;
-}
 .HeaderDiv{
     display: flex;
 }
@@ -33,4 +25,28 @@ header img{
 }
 .menu_items p{
     margin: 20px;
+}
+.scroll-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: translateY(-100%);
+    z-index: 1111;
+    width: 100%;
+    color: black;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100px;
+    backdrop-filter: blur(8px);
+}
+.scroll-header.visible{
+    transform: translateY(0);
+}
+.main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: background-color 0.3 ease;
+    z-index: 1000;
 }

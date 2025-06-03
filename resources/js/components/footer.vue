@@ -21,7 +21,7 @@
         </div>
     </div>
     <footer>
-        <div>
+        <div class="inner_footer">
             <p>© 2025 ПАО «Астраханский порт»</p>
             <a href="include/licenses_detail">Политика конфиденциальности</a>
             <div class="lang_sets">
