@@ -50,3 +50,36 @@ header img{
     transition: background-color 0.3 ease;
     z-index: 1000;
 }
+.contact-data{
+    display: flex;
+    align-items: center;
+}
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  padding: 10px 15px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+  pointer-events: none;
+  color: black;
+  width: 350px;
+}
+.dropdown li{
+    margin: 15px;
+}
+.dropdown-container:hover .dropdown,
+.dropdown-container.active .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}

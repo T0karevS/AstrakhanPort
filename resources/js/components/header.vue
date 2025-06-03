@@ -2,8 +2,32 @@
     <header class="main-header" :style="{opacity: showScrollHeader ? 0 : 1}">
         <img src="/images/sss.svg" alt="">
         <div class="menu_items">
-            <p>Главная</p>
-            <p>Услуги</p>
+            <div class="dropdown-container">
+                <a href="/"><p>Главная</p></a>
+                <ul class="dropdown">
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Документы</a></li>
+                    <li><a href="">Отчеты по доходам и расходам</a></li>
+                    <li><a href="">Годовой отчёт; закупки</a></li>
+                    <li><a href="">Раскрытие информации</a></li>
+                    <li><a href="">План развития</a></li>
+                    <li><a href="">Сообщения о собрании и протоколы общества</a></li>
+                    <li><a href="">Реквизиты</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-container">
+                <a href="services"><p>Услуги</p></a>
+                <ul class="dropdown">
+                    <li><a href="#">Импорт</a></li>
+                    <li><a href="#">Экспорт</a></li>
+                    <li><a href="">Термообработка</a></li>
+                    <li><a href="">Морские грузоперевозки</a></li>
+                    <li><a href="">ТЭО (экспедирование грузов)</a></li>
+                    <li><a href="">Таможенное оформление</a></li>
+                    <li><a href="">Ж/Д грузоперевозки</a></li>
+                    <li><a href="">Хранение</a></li>
+              </ul>
+            </div>
             <p>Тарифы</p>
             <p>Новости</p>
             <p>Контакты</p>
@@ -54,4 +78,24 @@ export default{
         },
     },
 };
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  const containers = document.querySelectorAll('.dropdown-container')
+
+  containers.forEach(container => {
+    let timeout
+
+    container.addEventListener('mouseenter', () => {
+      clearTimeout(timeout)
+      container.classList.add('active')
+    })
+
+    container.addEventListener('mouseleave', () => {
+      timeout = setTimeout(() => {
+        container.classList.remove('active')
+      }, 500)
+    })
+  })
+})
 </script>
