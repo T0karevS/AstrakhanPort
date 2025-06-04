@@ -1,12 +1,12 @@
 <template>
-    <header class="main-header" :style="{opacity: showScrollHeader ? 0 : 1}">
-        <img src="/images/sss.svg" alt="">
+    <header  class="main-header" :style="{opacity: showScrollHeader ? 0 : 1, color: isHome ? '#ffffff' : '#000000' }">
+        <img id="logo-img" :src="isHome ? '/images/sss.svg' : '/images/sss1.svg'" alt="">
         <div class="menu_items">
             <div class="dropdown-container">
                 <a href="/"><p>Главная</p></a>
                 <ul class="dropdown">
-                    <li><a href="#">О компании</a></li>
-                    <li><a href="#">Документы</a></li>
+                    <li><a href="/company">О компании</a></li>
+                    <li><a href="/documents">Документы</a></li>
                     <li><a href="">Отчеты по доходам и расходам</a></li>
                     <li><a href="">Годовой отчёт; закупки</a></li>
                     <li><a href="">Раскрытие информации</a></li>
@@ -78,9 +78,10 @@ export default{
         },
     },
 };
-import { onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
 onMounted(() => {
+
   const containers = document.querySelectorAll('.dropdown-container')
 
   containers.forEach(container => {
@@ -94,8 +95,14 @@ onMounted(() => {
     container.addEventListener('mouseleave', () => {
       timeout = setTimeout(() => {
         container.classList.remove('active')
-      }, 500)
+      }, 300)
     })
   })
 })
+
+</script>
+<script setup>
+import { usePage } from '@inertiajs/vue3';
+const page = usePage()
+const isHome = page.url === '/'
 </script>
