@@ -1,0 +1,117 @@
+.cards_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 200px auto;
+}
+.card-info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white !important;
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+.export_text,
+.company-info {
+    position: static;
+    margin: 0;
+    padding: 0;
+    color: white !important;
+}
+.company_card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    aspect-ratio: 1 / 1;
+    transition: transform 0.3s ease;
+    height: 360px;
+    width: 600px;
+}
+
+.innercard_s img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s ease;
+    position: relative;
+}
+
+.company-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    opacity: 0;
+    color: white !important;
+    z-index: 3;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(20px); /* чуть ниже — чтоб плавно “поднялся” */
+}
+
+.card_buttons {
+    display: none !important;
+}
+
+.export_text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    font-size: 30px !important;
+    color: white;
+    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.8), 0px 0px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+    z-index: 2;
+}
+
+/* Hover effects */
+.company_card:hover .innercard_s img {
+    filter: brightness(0.6);
+}
+
+.company_card:hover .overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+
+.company_card:hover .card-info{
+    display: flex;
+
+}
+.export_text {
+    pointer-events: none;
+}
+.company_card:hover .company-info {
+    opacity: 1;
+    transform: translateY(0);
+    position: static;
+    margin: 0px 0px;
+    padding: 0px 10px;
+}
+
+.company_card:hover .export_text {
+    transform: translateY(-20px);
+    position: static;
+    margin: 0px 0px;
+    padding: 0px 10px;
+}

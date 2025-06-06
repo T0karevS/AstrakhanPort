@@ -18,8 +18,8 @@
             <div class="dropdown-container">
                 <a href="services"><p>Услуги</p></a>
                 <ul class="dropdown">
-                    <li><a href="#">Импорт</a></li>
-                    <li><a href="#">Экспорт</a></li>
+                    <li><a href="/import">Импорт</a></li>
+                    <li><a href="/export">Экспорт</a></li>
                     <li><a href="">Термообработка</a></li>
                     <li><a href="">Морские грузоперевозки</a></li>
                     <li><a href="">ТЭО (экспедирование грузов)</a></li>

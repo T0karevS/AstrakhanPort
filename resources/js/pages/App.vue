@@ -1,5 +1,6 @@
 
 <script setup>
+import '../../css/mainpage.css'
 import Header from '@/components/header.vue'
 import MainPage from '@/components/mainpage.vue'
 import MainPageContainer from '@/components/maincontainer.vue'
