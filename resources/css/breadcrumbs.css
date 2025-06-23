@@ -1,0 +1,21 @@
+.breadcrumbs_ul {
+    display: flex;
+    gap: 10px;
+}
+
+.breadcrumbs {
+    padding: 150px 150px 0px;
+}
+
+.breadcrumbs h1 {
+    font-family: robotoslab;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.breadcrumbs li {
+    align-items: center;
+    display: flex;
+    gap: 7px;
+    color: #00000060;
+}
