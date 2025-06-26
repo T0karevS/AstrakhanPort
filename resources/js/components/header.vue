@@ -16,16 +16,16 @@
               </ul>
             </div>
             <div class="dropdown-container">
-                <a href="services"><p>Услуги</p></a>
+                <a href="/services"><p>Услуги</p></a>
                 <ul class="dropdown">
-                    <li><a href="/import">Импорт</a></li>
-                    <li><a href="/export">Экспорт</a></li>
-                    <li><a href="">Термообработка</a></li>
-                    <li><a href="">Морские грузоперевозки</a></li>
-                    <li><a href="">ТЭО (экспедирование грузов)</a></li>
-                    <li><a href="">Таможенное оформление</a></li>
-                    <li><a href="">Ж/Д грузоперевозки</a></li>
-                    <li><a href="">Хранение</a></li>
+                    <li><a href="/services/import">Импорт</a></li>
+                    <li><a href="/services/export">Экспорт</a></li>
+                    <li><a href="/services/termoobrabotka">Термообработка</a></li>
+                    <li><a href="/services/morskie-gruzoperevozki">Морские грузоперевозки</a></li>
+                    <li><a href="/services/teo">ТЭО (экспедирование грузов)</a></li>
+                    <li><a href="/services/tamozhnya">Таможенное оформление</a></li>
+                    <li><a href="/services/zh-d-gruzoperevozki">Ж/Д грузоперевозки</a></li>
+                    <li><a href="/services/khranenie">Хранение</a></li>
               </ul>
             </div>
             <p>Тарифы</p>
@@ -57,8 +57,8 @@
     </header>
 </template>
 <script>
-import '../../css/style.css'
-import '../../css/header.css'
+import '../../css/style.css';
+import '../../css/header.css';
 export default{
     data(){
         return{
@@ -104,5 +104,6 @@ onMounted(() => {
 <script setup>
 import { usePage } from '@inertiajs/vue3';
 const page = usePage()
-const isHome = page.url === '/'
+const isServiceSubpage = /^\/services\/[a-z-]+/.test(page.url);
+const isHome = page.url === '/'|| isServiceSubpage;
 </script>

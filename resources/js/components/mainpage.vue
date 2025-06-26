@@ -58,8 +58,9 @@ import 'swiper/css/pagination';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 const slides = [
-  { type: 'video', src: '/video/mainpagevideo.mp4' },
+  
   { type: 'image', src: '/images/mainpage.jpg' },
+  { type: 'video', src: '/video/mainpagevideo.mp4' },
 ];
 
 </script>

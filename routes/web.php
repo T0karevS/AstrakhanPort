@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\CompanyController; 
+use App\Http\Controllers\ServiceController;
 
 Route::get('/', function () {
     return Inertia::render('App');
@@ -36,6 +37,9 @@ Route::get('/company/{section?}', [CompanyController::class, 'index'])
 Route::get('/company/{any}', function () {
     return inertia('Company/Index', ['initialSection' => 'about']);
 })->where('any', '.*');
+Route::get('/services/{section?}', [ServiceController::class, 'index'])
+    ->where('section', 'export|import|termoobrabotka|morskie-gruzoperevozki|tamozhnya|teo|khranenie|zh-d-gruzoperevozki')
+    ->name('ServicePage');
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

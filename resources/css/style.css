@@ -367,8 +367,8 @@ footer {
     padding: 10px 0px;
 }
 .vacancy_contact{
-    margin: 30px auto;
-    width: 70%;
+    margin: 30px 500px;
+    width: 1200px;
     padding: 30px;
     border-radius: 10px;
     border: 1px solid #00000020;
@@ -414,4 +414,12 @@ footer {
     margin: 0px;
     width: 300px;
     text-align: left;
+}
+.plans_block{
+    margin: 30px 500px;
+    width: 1200px;
+
+}
+.video-container video{
+    position: static;
 }
