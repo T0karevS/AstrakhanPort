@@ -361,12 +361,14 @@ footer {
 .swiper-button-next {
     display: none !important;
 }
-.vacancy_contact_inner{
+
+.vacancy_contact_inner {
     display: flex;
     gap: 50px;
     padding: 10px 0px;
 }
-.vacancy_contact{
+
+.vacancy_contact {
     margin: 30px 500px;
     width: 1200px;
     padding: 30px;
@@ -374,31 +376,38 @@ footer {
     border: 1px solid #00000020;
     background-color: #fafafa;
 }
-.vacancy_text{
+
+.vacancy_text {
     padding: 0 10px;
 }
-.about_us_block{
+
+.about_us_block {
     margin: 30px 500px;
     width: 1200px;
 
 }
-.about_us_block h2{
+
+.about_us_block h2 {
     font-weight: bold;
     margin: 10px 0;
 }
-.about_us_block p{
+
+.about_us_block p {
     margin: 10px 0;
 }
-.about_us_block li{
-    margin-right: -1.5em;   
+
+.about_us_block li {
+    margin-right: -1.5em;
 }
-.about_us_block li::before{
+
+.about_us_block li::before {
     content: '—';
     display: inline-block;
     width: 1.5em;
-     
+
 }
-.company-nav{
+
+.company-nav {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -408,18 +417,160 @@ footer {
     align-items: start;
     justify-content: start;
 }
-.company-nav button{
+
+.company-nav button {
+    cursor: pointer;
+}
+
+.company-nav button {
     border: 1px solid #00000050;
     padding: 10px 20px;
     margin: 0px;
     width: 300px;
     text-align: left;
 }
-.plans_block{
+
+.plans_block {
     margin: 30px 500px;
     width: 1200px;
+}
+
+.video-container video {
+    position: static;
+}
+
+.docs_container {
+    margin: 30px 0px 0px 500px;
+}
+
+.docs_category h3 {
+    font-size: 32px;
+    font-weight: 550;
+    font-family: RobotoSlab;
+    margin: 20px 0;
 
 }
-.video-container video{
-    position: static;
+
+.document-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 800px;
+    height: 40px;
+    padding: 40px;
+    border-radius: 3px;
+    border: 1px solid #00000020;
+    margin: 20px 0;
+}
+
+.document-item i::before {
+    width: 30px;
+    height: 30px;
+}
+
+.vacancy {
+    margin: 30px 500px;
+    width: 1200px;
+}
+
+.vacancy-card {
+
+    width: 1200px;
+    border-radius: 3px;
+    border: 1px solid #00000020;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.vacancy-inner-container {
+
+    display: flex;
+    align-items: center;
+}
+
+.vacancy-description {
+    display: none;
+    padding: 0 40px;
+}
+
+.vacancy-meta span {
+    color: #00000050;
+}
+
+.vacancy-card-upper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.rotate-btn {
+    font-size: 30px !important;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    -webkit-user-select: none;
+}
+
+.vacancy_activeblock {
+    padding:
+        clamp(10px, 4vh, 120px)
+}
+
+.strip-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+.strip-list li {
+    padding: 12px 15px;
+}
+
+/* Четные элементы - серые */
+.strip-list li:nth-child(even) {
+    background: #f5f5f5;
+}
+
+/* Нечетные элементы - белые */
+.strip-list li:nth-child(odd) {
+    background: white;
+}
+
+.strip-list li strong {
+    display: inline-block;
+    min-width: 300px;
+}
+.requisites-block{
+    margin: 30px 500px;
+    width: 1200px;
+}
+.railway_nak{
+    background-image: url(/public/images/background.png);
+    padding: 30px;
+    border-left: 1px solid darkblue;
+    margin-top: 50px;
+}
+.railway_nak h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+.railway_nak p{
+    margin: 15px 0;
+    font-size: 16px;
+}
+.vacancy-card-upper h3{
+    font-family: robotoslab;
+    font-size: 22px;
+    font-weight: 550;
+
 }

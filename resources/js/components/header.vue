@@ -6,13 +6,13 @@
                 <a href="/"><p>Главная</p></a>
                 <ul class="dropdown">
                     <li><a href="/company">О компании</a></li>
-                    <li><a href="/documents">Документы</a></li>
+                    <li><a href="/company/documents">Документы</a></li>
                     <li><a href="">Отчеты по доходам и расходам</a></li>
                     <li><a href="">Годовой отчёт; закупки</a></li>
                     <li><a href="">Раскрытие информации</a></li>
                     <li><a href="">План развития</a></li>
                     <li><a href="">Сообщения о собрании и протоколы общества</a></li>
-                    <li><a href="">Реквизиты</a></li>
+                    <li><a href="/company/requisites">Реквизиты</a></li>
               </ul>
             </div>
             <div class="dropdown-container">
@@ -28,11 +28,10 @@
                     <li><a href="/services/khranenie">Хранение</a></li>
               </ul>
             </div>
-            <p>Тарифы</p>
-            <p>Новости</p>
+            <a href="/tariffs"><p>Тарифы</p></a>
+            <a href="/news"><p>Новости</p></a>
             <a href="/contacts"><p>Контакты</p></a>
             <a href="/company/vacancy"><p>Вакансии</p></a>
-            <p>...</p>
         </div>
         <div class="HeaderDiv">
             <img class="HeaderSearch" src="/images/21312.svg" alt="">

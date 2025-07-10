@@ -16,7 +16,7 @@
           <p class="company-info">{{ card.description }}</p>
           <div class="card_buttons">
             <button class="Xbtn">Забронировать</button>
-            <button class="Ybtn">Подробнее</button>
+            <a :href="card.link" class="Ybtn">Подробнее</a>
           </div>
         </div>
         <img :src="card.image" alt="" />
@@ -76,25 +76,25 @@ const cards = ref([
     title: 'Таможенное оформление',
     description: 'Таможенное оформление грузов на всей территории РФ.',
     image: 'images/tamozhnya.jpg',
-    link: '/services'
+    link: '/services/tamozhnya'
   },
   {
     title: 'ТЭО (экспедирование грузов)',
     description: 'Экспедирование грузов - один из важнейших пунктов логистики, к которому необходимо подойти серьезно, планируя междугородние и международные перевозки.',
     image: 'images/kran.jpg',
-    link: '/services'
+    link: '/services/teo'
   },
   {
     title: 'Хранение',
     description: 'Если вы ищете надежный и ответственный склад для хранения своих грузов, то вы попали по адресу!',
     image: 'images/doski.png',
-    link: '/services'
+    link: '/services/khranenie'
   },
   {
     title: 'ЖД грузоперевозки',
     description: 'Международные морские перевозки – это один из наиболее значимых и популярных способов доставки грузов на большие расстояния по всему миру.',
     image: 'images/poezd.jpg',
-    link: '/services'
+    link: '/services/zh-d-gruzoperevozki'
   },
 ])
 // if(isServicesPage){  

@@ -177,3 +177,12 @@
     max-width: 70px;
     max-height: 70px;
 }
+.teasers_mini{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+    border: 1px solid #00000020;
+    border-radius: 2px;
+    width: max-content;
+}

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\CompanyController; 
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\NewsController;
+
 
 Route::get('/', function () {
     return Inertia::render('App');
@@ -17,6 +19,10 @@ Route::get('/services', function () {
 Route::get('/contacts', function () {
     return Inertia::render('Contacts');
 })->name('contacts');
+Route::get('/news', [NewsController::class, 'index'])->name('news');
+Route::get('/tariffs', function () {
+    return Inertia::render('Tariffs');
+})->name('tariffs');
 Route::get('/company', function () {
     return Inertia::render('Company');
 })->name('company');
@@ -32,7 +38,7 @@ Route::get('/company', function () {
 //     Route::get('/vacancy', [CompanyController::class, 'vacancy'])->name('company.vacancy');
 // });
 Route::get('/company/{section?}', [CompanyController::class, 'index'])
-    ->where('section', 'about|documents|plans|vacancy')
+    ->where('section', 'about|documents|plans|vacancy|requisites')
     ->name('company');
 Route::get('/company/{any}', function () {
     return inertia('Company/Index', ['initialSection' => 'about']);

@@ -8,10 +8,14 @@
       <button @click="setActiveTab('documents')">Документы</button>
       <button @click="setActiveTab('plans')">План развития</button>
       <button @click="setActiveTab('vacancy')">Вакансии</button>
+      <button @click="setActiveTab('requisites')">Реквизиты</button>
     </nav>
 
     <div class="company-content">
-      <component :is="activeComponent" />
+      <component 
+        :is="activeComponent" 
+        :key="activeTab" 
+        />
     </div>
   </div>
   <Footer />
@@ -28,12 +32,10 @@ import About from '@/components/About.vue'
 import Plans from '@/components/Plans.vue'
 import Documents from '@/components/Documents.vue'
 import VacancyComponent from '@/components/VacancyComponent.vue'
+import Requisites  from '@/components/Requisites.vue' 
 // import Development from './Development.vue'
 // import Contacts from './Contacts.vue'
 
-onMounted(() => {
-    document.title = 'О компании';
-})
 const props = defineProps({
   initialSection: {
     type: String,
@@ -41,10 +43,9 @@ const props = defineProps({
   }
 })
 
-// Доступные разделы
-const validTabs = ['about', 'documents', 'plans', 'vacancy']
 
-// Проверяем, что переданный раздел допустим
+const validTabs = ['about', 'documents', 'plans', 'vacancy', 'requisites']
+
 const initialTab = validTabs.includes(props.initialSection) 
   ? props.initialSection 
   : 'about'
@@ -56,6 +57,7 @@ const components = {
   documents: Documents,
   plans: Plans,
   vacancy: VacancyComponent,
+  requisites: Requisites,
 }
 
 const activeComponent = computed(() => components[activeTab.value])
@@ -86,10 +88,10 @@ function handleRouteChange() {
 // Функция переключения табов
 function setActiveTab(tab) {
   if (!validTabs.includes(tab)) return
-  
-  activeTab.value = tab
-  // Обновляем URL без перезагрузки страницы
-  window.history.pushState({}, '', `/company/${tab}`)
+  router.get(`/company/${tab}`, {}, {
+    preserveState: false, // Полная перезагрузка
+    replace: true,
+  });
 }
 
 // Очистка слушателя событий при размонтировании компонента

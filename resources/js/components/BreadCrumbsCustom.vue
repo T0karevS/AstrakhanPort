@@ -20,6 +20,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { usePage } from '@inertiajs/vue3'
 import { Link } from '@inertiajs/vue3'
 import '../../css/breadcrumbs.css'
 
@@ -38,13 +39,19 @@ const labelmap = {
   tamozhnya: 'Таможенное оформление',
   teo : 'ТЭО (экспедирование грузов)',
   khranenie: 'Хранение',
-  'zh-d-gruzoperevozki': 'Ж/Д грузоперевозки'
+  'zh-d-gruzoperevozki': 'Ж/Д грузоперевозки',
+  'requisites': 'Реквизиты',
+  news: 'Новости',
+  tariffs: 'Тарифы',
 }
 
 // Реактивные данные
 const currentPath = ref(window.location.pathname)
 const breadcrumbs = ref([])
 const currentTitle = ref('')
+
+const { props } = usePage()
+
 
 // Функция обновления крошек
 const updateBreadcrumbs = () => {

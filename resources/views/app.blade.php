@@ -3,10 +3,19 @@
     <head>
         @inertiaHead
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>
+            @isset($page['props']['breadcrumbTitle'])
+            {{ $page['props']['breadcrumbTitle'] }} | Астраханский порт
+        @else
+            Астраханский порт
+        @endisset
+        </title>
+        @vite(['resources/js/app.ts'])
+        @inertiaHead
         {{-- Inline script to detect system dark mode preference and apply it immediately --}}
-        <script>
+        <script setup>
+            import { Head, props } from '@inertiajs/vue3'
             (function() {
                 const appearance = '{{ $appearance ?? "system" }}';
 
