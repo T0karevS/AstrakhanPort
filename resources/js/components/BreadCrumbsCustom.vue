@@ -1,7 +1,7 @@
 <template>
-        <head>
-             <title>{{ $page.component }} - {{ $page.props.breadcrumbTitle }}</title>
-        </head>
+        <Head>
+             <title>{{ currentTitle }}</title>
+        </Head>
   <nav class="breadcrumbs">
     <h1>{{ currentTitle }}</h1>
     <ul class="breadcrumbs_ul">
@@ -19,8 +19,9 @@
 </template>
 
 <script setup>
+
 import { ref, onMounted, onUnmounted } from 'vue'
-import { usePage } from '@inertiajs/vue3'
+import { Head, usePage } from '@inertiajs/vue3'
 import { Link } from '@inertiajs/vue3'
 import '../../css/breadcrumbs.css'
 
@@ -52,8 +53,6 @@ const currentTitle = ref('')
 
 const { props } = usePage()
 
-
-// Функция обновления крошек
 const updateBreadcrumbs = () => {
   const segments = currentPath.value.split('/').filter(Boolean)
   let path = ''
@@ -62,12 +61,21 @@ const updateBreadcrumbs = () => {
     { label: 'Главная', link: '/' }
   ]
   
-  segments.forEach(segment => {
+  segments.forEach((segment, i) => {
     path += `/${segment}`
-    newCrumbs.push({
-      label: labelmap[segment] || segment.replace(/-/g, ' '),
-      link: path
-    })
+    
+    // Особый случай для новостей
+    if (segments[i-1] === 'news' && !isNaN(segment) && props.breadcrumbData?.newsTitle) {
+      newCrumbs.push({
+        label: props.breadcrumbData.newsTitle,
+        link: path
+      })
+    } else {
+      newCrumbs.push({
+        label: labelmap[segment] || segment.replace(/-/g, ' '),
+        link: path
+      })
+    }
   })
   
   breadcrumbs.value = newCrumbs

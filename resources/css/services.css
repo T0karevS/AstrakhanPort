@@ -94,7 +94,7 @@
 }
 
 .company_card:hover .overlay {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -185,4 +185,24 @@
     border: 1px solid #00000020;
     border-radius: 2px;
     width: max-content;
+}
+.news_text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    font-size: 30px !important;
+    color: white;
+    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.8), 0px 0px 10px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+.news_date{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    font-size: 30px !important;
+    color: white;
+    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.8), 0px 0px 10px rgba(0, 0, 0, 0.4);
+    z-index: 2;
 }

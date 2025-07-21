@@ -20,6 +20,7 @@ Route::get('/contacts', function () {
     return Inertia::render('Contacts');
 })->name('contacts');
 Route::get('/news', [NewsController::class, 'index'])->name('news');
+Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
 Route::get('/tariffs', function () {
     return Inertia::render('Tariffs');
 })->name('tariffs');

@@ -2,17 +2,17 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  @class(['dark' => ($appearance ?? 'system') == 'dark'])>
     <head>
         @inertiaHead
+        <title inertia ></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        <title>
+        <!-- <title>
             @isset($page['props']['breadcrumbTitle'])
             {{ $page['props']['breadcrumbTitle'] }} | Астраханский порт
         @else
             Астраханский порт
         @endisset
-        </title>
+        </title> -->
         @vite(['resources/js/app.ts'])
-        @inertiaHead
         {{-- Inline script to detect system dark mode preference and apply it immediately --}}
         <script setup>
             import { Head, props } from '@inertiajs/vue3'
