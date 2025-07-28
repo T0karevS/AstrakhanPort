@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Controllers\CompanyController; 
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\AdminController;
 
 
 Route::get('/', function () {
@@ -50,6 +52,43 @@ Route::get('/services/{section?}', [ServiceController::class, 'index'])
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/admin/login', function () {
+//     return Inertia::render('AdminAuth');
+// })->name('login');
 
+// // Проверка пароля и редирект в админку
+// Route::post('/admin/login', function (Request $request) {
+//     if ($request->password !== env('ADMIN_PASSWORD')) {
+//         return back()->withErrors(['password' => 'Неверный пароль']);
+//     }
+
+//     // Редирект с паролем в URL (но скрыто, через временный токен)
+//     return redirect()->route('admin.dashboard', [
+//         'password' => $request->password
+//     ]);
+// });
+
+// // Защищённые админ-роуты
+// Route::prefix('admin')->middleware('admin.password')->group(function () {
+//     Route::get('/', function () {
+//         return Inertia::render('AdminPage');
+//     })->name('admin.dashboard');
+
+//     // ...остальные CRUD-роуты
+// });
+Route::middleware('admin')->group(function (){
+    Route::get('/admin', fn() => Inertia::render('AdminPage'));
+});
+Route::match(['get', 'post'], '/admin', function( Request $request){
+    if ($request->isMethod('post')){
+        if ($request->password === env('ADMIN_PASSWORD')){
+            $request->session()->put('is_admin', true);
+        }
+    }
+    if(!$request->session()->get('is_admin')){
+        return Inertia::render('AdminAuth');
+    }
+    return Inertia::render('AdminPage');
+});
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
