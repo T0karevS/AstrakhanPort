@@ -46,7 +46,7 @@
                 <span class="contact-title">Бухгалтерия:</span> +7(908) 612-13-37, (8512) 44-28-88 (доб. 4)<br>
                 <span class="contact-title">E-mail:</span> astraport@bk.ru (информация для бухгалтерии)
             </div>
-            <button class="Ybtn">Свяжитесь с нами</button>
+            <button @click="openModal()" class="Ybtn">Свяжитесь с нами</button>
         </div>
         <div class="map-mini" style="position:relative;overflow:hidden;">
             <iframe
@@ -57,8 +57,8 @@
     </div>
 
 </template>
-<script>
+<script setup>
 import '../../css/contacts.css'
 import '../../css/style.css'
-
+import { openModal } from '@/modal.js';
 </script>

@@ -9,11 +9,12 @@ use Symfony\Component\HttpFoundation\Response;
 class CheckAdminPassword
 {
     public function handle(Request $request, Closure $next)
-{
-    if (!$request->session()->get('is_admin')){
-        abort(403);
-    }
+    {
+        if (!$request->session()->get('is_admin')) {
+            return redirect('/admin/login');
+        }
 
-    return $next($request);
+        return $next($request);
+    }
 }
-}
+

@@ -39,12 +39,12 @@
             <div class="teasers_l2">Готовы отвечать на вопросы в любое время</div>
         </div>
         <div class="teasers_block">
-            <div class="teasers_l1">500+</div>
-            <div class="teasers_l2">Мы надежные партнеры</div>
+            <div class="teasers_l1">100%</div>
+            <div class="teasers_l2">Предоставляем документы, лицензии и сертификаты</div>
         </div>
         <div class="teasers_block">
             <div class="teasers_l1">24/7</div>
-            <div class="teasers_l2">Мы надежные партнеры</div>
+            <div class="teasers_l2">Заботимся о вашем времени, развитии и ресурсах</div>
         </div>
     </div>
 </template>

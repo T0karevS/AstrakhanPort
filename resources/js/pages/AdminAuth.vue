@@ -22,6 +22,6 @@ const password = ref('')
 const errors = usePage().props.errors || {}
 
 function submit() {
-  router.post('/admin', { password: password.value }, { preserveScroll: true })
+  router.post('/admin/login', { password: password.value }, { preserveScroll: true })
 }
 </script>

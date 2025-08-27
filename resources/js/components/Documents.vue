@@ -8,7 +8,7 @@
           <ul class="document-list">
             <li v-for="doc in docs" :key="doc.id" class="document-item">
               <i :class="['fas', getFileIcon(doc.doc_link), 'fa-2x']"></i>
-              <a :href="`/${doc.doc_link}`" target="_blank" class="document-link">
+              <a :href="`/storage/${doc.doc_link}`" target="_blank" class="document-link">
                 {{ doc.doc_name }}
               </a>
               <!-- <span class="file-size">({{ getFileSize(doc.doc_link) }})</span> -->

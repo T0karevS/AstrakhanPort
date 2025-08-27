@@ -2,6 +2,7 @@
 <template>
     <Header />
     <BreadCrumbsCustom :key="$page.url" />
+    <PopUpButton v-if="showModal" @close="closeModal" :props="modalProps" />
   <div>
     <nav class="company-nav">
       <button @click="setActiveTab('about')">О компании</button>
@@ -33,6 +34,8 @@ import Plans from '@/components/Plans.vue'
 import Documents from '@/components/Documents.vue'
 import VacancyComponent from '@/components/VacancyComponent.vue'
 import Requisites  from '@/components/Requisites.vue' 
+import PopUpButton from '@/components/PopUpButton.vue'
+import { showModal, modalProps, closeModal, openModal } from '@/modal.js'
 // import Development from './Development.vue'
 // import Contacts from './Contacts.vue'
 

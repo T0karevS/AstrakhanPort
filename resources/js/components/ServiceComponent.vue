@@ -12,7 +12,7 @@
                     <p class="">Оформите заявку на услугу, мы свяжемся с вами в ближайшее время и ответим на все
                         интересующие вопросы.</p>
                 </div>
-                <button class="Ybtn">Заказать услугу</button>
+                <button @click="openModal()" class="Ybtn">Подать заявку</button>
                 <button class="Xbtn">?</button>
             </div>
         </div>
@@ -83,4 +83,5 @@ const servicesData = {
 const { url } = usePage()
 const currentPath = url.split('/').pop() // получаем последнюю часть URL
 const pageData = servicesData[currentPath]
+import { openModal } from '@/modal.js'
 </script>
