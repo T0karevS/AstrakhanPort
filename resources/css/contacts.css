@@ -36,3 +36,8 @@
 .contact_info p{
     margin-left: 0px;
 }
+@media (max-width: 768px) {
+    .contacts_mainblock{
+       flex-direction: column; 
+    }    
+}

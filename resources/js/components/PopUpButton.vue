@@ -13,6 +13,7 @@
           <input v-model="form.name" class="input" placeholder="Имя" required />
           <input v-model="form.phone" class="input" type="tel" placeholder="Телефон"
             @input="form.phone = form.phone.replace(/[^0-9+()\-\s]/g, '')" required />
+            <input v-model="form.topic" class="input" placeholder="Тема обращения" required />
           <textarea v-model="form.message" class="textarea" placeholder="Сообщение"></textarea>
           <div class="checkbobs-div">
             <input class="checkbobs" type="checkbox" required>
@@ -37,6 +38,7 @@ const emit = defineEmits(['close'])
 const form = useForm({
   name: '',
   phone: '',
+  topic: '',
   message: '',
 })
 

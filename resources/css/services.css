@@ -206,3 +206,14 @@
     text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.8), 0px 0px 10px rgba(0, 0, 0, 0.4);
     z-index: 2;
 }
+@media(max-width:768px){
+    .cards_container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    width: 80%;
+    margin: 50px auto;
+}
+.innercard_s img{
+    max-width: none;
+}
+}

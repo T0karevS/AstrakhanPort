@@ -1,6 +1,7 @@
-html{
+html {
     scrollbar-gutter: stable;
 }
+
 @font-face {
     font-family: 'Montserrat';
     src: url(/public/fonts/Montserrat-Regular.ttf);
@@ -43,34 +44,6 @@ video {
     height: 960px;
 }
 
-.teasers {
-    margin-top: 0px;
-    padding: 30px 0 30px;
-    height: 180px;
-    background-color: #00000006;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.teasers_l1 {
-    font-size: 50px;
-    color: #2b3c66;
-    font-family: RobotoSlab;
-}
-
-.teasers_l2 {
-    max-width: 200px;
-    font-family: Montserrat;
-    height: 72px;
-}
-
-.teasers_block {
-
-    padding: 0 140px;
-    border-right: 1px solid #00000020;
-    border-left: 1px solid #00000020;
-}
 
 .innercard {
     display: flex;
@@ -111,6 +84,7 @@ video {
     color: #2b3c66;
     font-family: Montserrat;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .Ybtn:hover {
@@ -128,6 +102,7 @@ video {
     color: #fff;
     font-family: Montserrat;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .Xbtn:hover {
@@ -162,6 +137,7 @@ video {
     padding: 9px 20px 10px;
     border-radius: 20px;
     color: #ffffff;
+    cursor: pointer;
 }
 
 /* .my-button:hover{
@@ -254,6 +230,8 @@ video {
 
 footer {
     background-color: #333333;
+    width: 100%;
+
 }
 
 .contacts h3 {
@@ -553,31 +531,68 @@ footer {
     display: inline-block;
     min-width: 300px;
 }
-.requisites-block{
+
+.requisites-block {
     margin: 30px 500px;
     width: 1200px;
 }
-.railway_nak{
+
+.railway_nak {
     background-image: url(/public/images/background.png);
     padding: 30px;
     border-left: 1px solid darkblue;
     margin-top: 50px;
 }
-.railway_nak h1{
+
+.railway_nak h1 {
     font-size: 30px;
     font-weight: bold;
 }
-.railway_nak p{
+
+.railway_nak p {
     margin: 15px 0;
     font-size: 16px;
 }
-.vacancy-card-upper h3{
+
+.vacancy-card-upper h3 {
     font-family: robotoslab;
     font-size: 22px;
     font-weight: 550;
 
 }
-.newsblock{
+
+.newsblock {
     margin: 30px 150px;
     width: 1200px;
+}
+
+@media (max-width: 768px){
+    
+.inner_footer p,
+.inner_footer a,
+.inner_footer div {
+    width: 33%;
+    font-size: 12px;
+    text-align: center;
+}
+.lang_sets{
+    align-items: center;
+    justify-content: center;
+}
+.lang_sets div{
+    max-width: fit-content;
+}
+.vacancy_contact p{
+    font-size: 0.75rem;
+}
+.vacancy_contact_inner{
+    gap: 10px;
+}
+.document-item{
+    width: unset;
+}
+.company-content, .plans_block, .docs_container, .about_us_block, .vacancy_contact{
+    width: 90%;
+    margin: 300px auto;
+}
 }

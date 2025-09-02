@@ -16,7 +16,6 @@ header {
 }
 
 .main-header--alt {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -35,10 +34,11 @@ header img {
 
 .menu_items {
     display: flex;
+    width: 700px;
 }
 
 .menu_items p {
-    margin: 20px;
+    /* margin: 20px; */
 }
 
 .scroll-header {
@@ -60,7 +60,7 @@ header img {
 }
 
 .main-header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -71,12 +71,15 @@ header img {
 .contact-data {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .dropdown-container {
     position: relative;
 }
-
+.phone_numberX{
+    z-index: 1;
+}
 .dropdown {
     position: absolute;
     top: 100%;
@@ -87,6 +90,7 @@ header img {
     visibility: hidden;
     transform: translateY(10px);
     transition: all 0.3s ease;
+
     z-index: 100;
     pointer-events: none;
     color: black;
@@ -103,4 +107,40 @@ header img {
     visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
+}
+.contact-data {
+  position: relative;
+
+
+  padding: 10px;
+  border-radius: 5px;
+}
+
+ .contact-data .dropdown2 {
+  display: none;
+  position: absolute;
+  top: 0%; 
+  left: 0;
+  /* background: #fff; */
+  border-radius: 5px;
+  padding: 50px 10px 10px;
+  z-index: 0;
+  width: max-content;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+} 
+
+/* Показываем dropdown при наведении на весь блок, включая телефон и иконку */
+.contact-data:hover .dropdown2 {
+  display: block;
+    background: #fff; /* белый фон для всего блока */
+}
+.contact-data:hover {
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px; /* чтобы паддинг был только при ховере */
+}
+@media (max-width: 768px){
+    .menu_items{
+        display: none;
+    }
 }
