@@ -102,3 +102,14 @@ onUnmounted(() => {
   window.removeEventListener('popstate', handleRouteChange)
 })
 </script>
+<style>
+@media (max-width: 768px) {
+  .company-nav{
+    margin: auto;
+    position: relative;
+    top: 40px;
+    left: auto;
+  }  
+
+}
+</style>

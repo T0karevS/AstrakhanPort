@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class NewsImage extends Model
 {
-    protected $fillable = ['news_id', 'image_path'];
-     public $timestamps = false; 
-     public function news()
+    protected $fillable = ['image_path', 'news_id'];
+
+    public function news()
     {
-        return $this->belongsTo(News::class);
+        return $this->belongsTo(News::class, 'news_id');
     }
-}
+}   

@@ -36,18 +36,14 @@
 <script setup>
 import { openModal } from '@/modal.js'
 import { ref, computed } from 'vue'
+import { onMounted } from 'vue'
 
 const maxVisible = 4
 const showAll = ref(false)
 const isServicesPage = window.location.pathname === "/services"
 
 const cards = ref([
-  {
-    title: 'ПАО "Астраханский порт"',
-    description: 'Публичное акционерное общество «Астраханский порт» - один из важнейших морских портов на юге России. Порт расположен на Волге, играет ключевую роль в транспортной инфраструктуре региона и обеспечивает связь России со странами Каспийского бассейна.',
-    image: 'images/cardimage.jpg',
-    link: '/company'
-  },
+  
   {
     title: 'Экспорт',
     description: 'ПАО Астраханский порт предлагает Вам безопасное и надежное партнерство в области экспорта. Наш порт – важное звено в логистической цепи г.Астрахани, которое вот уже более 20 лет обеспечивает перевозку грузов между странами и континентами.',
@@ -129,6 +125,15 @@ document.addEventListener('DOMContentLoaded', function () {
     card.addEventListener('mouseleave', function () {
       exportText.style.bottom = '60px'; // или конкретное значение, например '60px'
     });
+  });
+});
+onMounted(() => {
+  document.querySelectorAll('.company-info').forEach(el => {
+    const maxLength = 120; // лимит символов
+    const text = el.textContent.trim();
+    if (text.length > maxLength) {
+      el.textContent = text.slice(0, maxLength) + '…';
+    }
   });
 });
 // var z = document.getElementsByClassName('.company-info').height

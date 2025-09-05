@@ -1,11 +1,9 @@
 <template>
   <header class="main-header" :style="{ opacity: showScrollHeader ? 0 : 1, color: isHome ? '#ffffff' : '#000000' }">
     <a href="/"><img id="logo-img" :src="isHome ? '/images/sss.svg' : '/images/sss1.svg'" alt=""></a>
-    <!-- <div v-if="openMenuModal" class="menu-modal" @click.self="openMenuModal = false"> -->
-       <!-- <div class="menu-modal-content"> -->
         <span @click="openMenuModal = false" class="close">&times;</span>
 
-        <div class="menu_items" :class="{ 'is-modal': openMenuModal }">
+        <div class="menu_items" :class="{ 'is-modal': openMenuModal }"@click.self="closeMenuModal">
           <div class="dropdown-container" v-for="menu in menus" :key="menu.title">
             <a :href="menu.link">
               <p>{{ menu.title }}</p>
@@ -24,8 +22,6 @@
             <p>Контакты</p>
           </a>
         </div>
-      <!-- </div>
-    </div> -->
     <div class="HeaderDiv">
       <button @click="openModal()" class="BtnZ">Подать заявку</button>
       <span class="burger mobile-only" @click="openMenuModal = true">☰</span>
@@ -65,7 +61,9 @@ import '../../css/style.css';
 import '../../css/header.css';
 import { watch } from 'vue'
 
-
+function closeMenuModal() {
+  openMenuModal.value = false
+}
 const openMenuModal = ref(false)
 const page = usePage()
 const isServiceSubpage = /^\/services\/[a-z-]+/.test(page.url)
@@ -181,7 +179,6 @@ const menus = [
   .burger {
     display: block;
   }
-
   .menu_items {
     display: none;
     
@@ -194,13 +191,15 @@ const menus = [
   .menu_items.is-modal {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-
+    gap: 30px;
+    align-items: center;
+    margin: auto;
+    border-radius: 5px;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     height: 100%;
+    width: 100%;
     background: white;
     z-index: 9999;
     padding: 20px;
@@ -218,7 +217,9 @@ const menus = [
     display: none;
     /* обычное меню скрываем */
   }
-
+  .HeaderDiv .BtnZ{
+    display: none;
+  }
   /* модалка показывается только когда openMenuModal = true через v-if */
   .menu-modal {
     display: flex;

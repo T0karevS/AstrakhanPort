@@ -85,7 +85,7 @@ const currentService = computed(() => rates[form.value.serviceType]);
 </script>
 
 <template>
-  <div class="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
+  <div class="calculator-block">
     <h1 class="text-2xl font-bold mb-6">Калькулятор логистических услуг</h1>
     
     <div class="space-y-4">
@@ -152,3 +152,15 @@ const currentService = computed(() => rates[form.value.serviceType]);
     </div>
   </div>
 </template>
+<style>
+  .calculator-block{
+    margin: 0 150px;
+    width: 40%;
+  }
+  @media (max-width: 425px) {
+    .calculator-block{
+      margin: 0 auto;
+      width: 80%;
+    }    
+  }
+</style>

@@ -32,3 +32,26 @@ export default {
   }
 }
 </script>
+<style>
+@media (max-width:320px) {
+  
+
+    .company_card{
+        width: 100%;
+        height: 65%;
+      }   
+      .export_text{
+        font-size: 14px !important;
+
+      }
+      .company-info{
+        font-size: 10px;
+      }
+      .overlay{
+        height: auto;
+      }
+      .news_text{
+        bottom: 200%;
+      }
+    }
+</style>

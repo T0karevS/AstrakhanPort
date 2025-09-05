@@ -27,37 +27,47 @@
     border-left: 1px solid #00000020;
 }
 
-.innercard_s{
+.innercard_s {
     display: flex;
     padding-bottom: 100px;
     width: 90%;
     justify-content: space-around;
     border-bottom: #00000020 solid 1px;
 }
-.innercard_s img{
+
+.innercard_s img {
     border-radius: 5px;
 }
-.card-info{
+
+.card-info {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: baseline;
-    margin: 0 ;
+    margin: 0;
 }
-.company_card{
+
+.company_card {
     margin: 100px 0 0;
     height: 500px;
     display: flex;
-    justify-content: center;    
+    justify-content: center;
 }
+
 @media (max-width: 768px) {
-    .overlay_text{
+    .overlay_text {
         font-size: 3rem !important;
         line-height: normal !important;
     }
-    .export_text{
+
+    .export_text {
         font-size: 22px !important;
     }
+
+    .map iframe {
+        height: auto;
+    }
+
     .teasers {
         flex-wrap: wrap;
         height: 360px;
@@ -101,27 +111,27 @@
         font-size: 12px;
     }
 
-    .cards_container .company_card:first-child .innercard_s {
+    /* .cards_container .company_card:first-child .innercard_s {
         flex-direction: column;
         align-items: center;
-    }
+    } */
 
-    .cards_container .company_card:first-child {
+    /* .cards_container .company_card:first-child {
         height: 700px;
-    }
+    } */
 
     .innercard_s img {
         max-width: 50%;
         height: auto;
     }
 
-    .cards_container .company_card:first-child img, 
-.cards_container .company_card:first-child .card-info{
+    /* .cards_container .company_card:first-child img,
+    .cards_container .company_card:first-child .card-info {
         align-items: center;
-   
-        width:  80%;
-        max-width: none ;
-    }
+
+        width: 80%;
+        max-width: none;
+    } */
 
     .contacts_bigblock {
         flex-direction: column;
@@ -133,7 +143,7 @@
 
     .innercard_s {
         align-items: center;
-             gap: 20px;
+        gap: 20px;
         padding: 20px;
         justify-content: space-between;
     }
@@ -152,9 +162,87 @@
         gap: 10px;
     }
 
-    .card_buttons button, .card_buttons a {
+    .card_buttons button,
+    .card_buttons a {
         font-size: 12px;
         margin: 0px;
         text-align: center;
+    }
+}
+
+@media (max-width: 425px) {
+    .teasers {
+        display: flex;
+        flex-direction: column;
+        /* горизонтальный ряд */
+        overflow-x: auto;
+        /* горизонтальный скролл */
+        gap: 10px;
+        align-content: normal;
+        justify-content: center;
+        align-items: normal;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+        /* плавный скролл на iOS */
+        height: 240px;
+    }
+
+    .teasers_block {
+        flex: 0 0 60%;
+        /* ширина карточки */
+        scroll-snap-align: start;
+        background: #f5f5f5;
+        padding: 15px;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    .teasers_block .teasers_l1,
+    .teasers_block .teasers_l2 {
+        text-align: center;
+    }
+
+    /* скрываем скроллбар */
+    .teasers::-webkit-scrollbar {
+        display: none;
+    }
+
+    .teasers .teasers_block {
+        border: none;
+        border-bottom: 1px solid #00000020;
+    }
+
+    .company-info {
+        max-width: 30ch;
+        text-overflow: ellipsis;
+    }
+
+    .company_card.reverse .export_text {
+        margin-right: 50px;
+    }
+
+    .map iframe {
+        height: auto;
+    }
+
+    .cards_container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 10px;
+    }
+
+    .company_card {
+        flex: 0 0 80%;
+        scroll-snap-align: start;
+    }
+
+   .company_card.reverse .innercard_s {
+    flex-direction: row !important;
+}
+    /* Скрыть скроллбар, если хочешь */
+    .cards_container::-webkit-scrollbar {
+        display: none;
     }
 }

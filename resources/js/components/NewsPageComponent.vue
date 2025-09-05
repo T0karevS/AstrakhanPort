@@ -172,4 +172,10 @@ document.addEventListener('keydown', (e) => {
   position: absolute;
   right: 20px;
 }
+@media (max-width: 320px) {
+  .newsdiv{
+    width: 90%;
+    margin: auto;
+  }  
+}
 </style>

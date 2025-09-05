@@ -22,3 +22,8 @@
 .breadcrumbs__separator{
     cursor: default;
 }
+@media (max-width: 425px) {
+        .breadcrumbs{
+        padding: 150px 20px 0px;
+        }    
+}

@@ -144,3 +144,7 @@ header img {
         display: none;
     }
 }
+@media (max-width: 425px) {
+    header{
+        font-size: 80%;    
+}}
