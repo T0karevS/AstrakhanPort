@@ -171,6 +171,10 @@
 }
 
 @media (max-width: 425px) {
+     .overlay_text {
+        font-size: 2rem !important;
+        line-height: normal !important;
+    }
     .teasers {
         display: flex;
         flex-direction: column;

@@ -50,17 +50,23 @@ class DocumentController extends Controller
 }
 
     public function update(Request $request, Document $document)
-    {
-        $validated = $request->validate([
-            'doc_name' => 'required|string|max:255',
-            'doc_category' => 'required|string',
-            'doc_year' => 'required|string|size:4',
-        ]);
+{
+    $validated = $request->validate([
+        'doc_name' => 'required|string|max:255',
+        'doc_category' => 'required|string',
+        'doc_year' => 'required|string|size:4',
+        'doc_link' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+    ]);
 
-        $document->update($validated);
-
-        return redirect()->back();
+    if ($request->hasFile('doc_link')) {
+        $path = $request->file('doc_link')->store('documents', 'public');
+        $validated['doc_link'] = $path;
     }
+
+    $document->update($validated);
+
+    return redirect()->back();
+}
 
     public function destroy(Document $document)
     {
