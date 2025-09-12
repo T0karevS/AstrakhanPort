@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  @class(['dark' => ($appearance ?? 'system') == 'dark'])>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" >
+     <!-- @class(['dark' => ($appearance ?? 'system') == 'dark']) -->
     <head>
         @inertiaHead
         <title inertia ></title>
+        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <!-- <title>
@@ -14,7 +16,7 @@
         </title> -->
         @vite(['resources/js/app.ts'])
         {{-- Inline script to detect system dark mode preference and apply it immediately --}}
-        <script setup>
+        <!-- <script setup>
             import { Head, props } from '@inertiajs/vue3'
             (function() {
                 const appearance = '{{ $appearance ?? "system" }}';
@@ -27,10 +29,10 @@
                     }
                 }
             })();
-        </script>
+        </script> -->
 
         {{-- Inline style to set the HTML background color based on our theme in app.css --}}
-        <style>
+        <!-- <style>
             html {
                 background-color: oklch(1 0 0);
             }
@@ -38,7 +40,7 @@
             html.dark {
                 background-color: oklch(0.145 0 0);
             }
-        </style>
+        </style> -->
 
         <link rel="icon" href="/favicon.ico" sizes="any">
         <link rel="icon" href="/favicon.svg" type="image/svg+xml">

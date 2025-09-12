@@ -95,11 +95,10 @@ const cards = ref([
 ])
 // if(isServicesPage){  
 const visibleCards = computed(() => {
-  const startIndex = isServicesPage ? 1 : 0
   const noLimit = isServicesPage || showAll.value
   return noLimit
-    ? cards.value.slice(startIndex)
-    : cards.value.slice(startIndex, maxVisible)
+    ? cards.value.slice(0)
+    : cards.value.slice(0, maxVisible)
 })
 document.addEventListener('DOMContentLoaded', function () {
   // Находим элементы

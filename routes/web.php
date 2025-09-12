@@ -85,10 +85,12 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('news', AdminNewsController::class)->except('show')->names([
         'index' => 'news.index',
         'store' => 'news.store',
+        'update'=>'news.update',
         'destroy' => 'news.destroy',
     ]);
 });
-
+Route::delete('/admin/news_images/{id}', [AdminNewsController::class, 'destroyImage'])
+    ->name('admin.news_images.destroy');
 Route::post('/contact', [LeadController::class, 'store'])->name('contact.store');
 
 require __DIR__.'/settings.php';
